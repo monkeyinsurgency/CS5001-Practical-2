@@ -12,6 +12,9 @@ public class log {
 	private final int UNHANDLED_ERROR = 3;
 	/** A non-critical error. **/
 	private final int ERROR = 4;
+	/** It's not always bad **/
+    private final int SUCCESS = 5;
+
 
 	public void LogEvent(String LogFilePath, String Msg, int ErrorNumber) throws IOException {
 
@@ -58,6 +61,9 @@ public class log {
 			case ERROR:
 				Bw.write("[" + ToDay + "] " + "[ERROR]" + " " + Msg + "\r\n");
 				break;
+			case SUCCESS:
+			    Bw.write("[" + ToDay + "]" + "[SUCCESS]" + " " + Msg + "\r\n");
+			    break;
 		}
 
 		Bw.close(); //closing File log
